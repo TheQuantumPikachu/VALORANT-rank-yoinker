@@ -312,7 +312,7 @@ try:
                         playerRank = rank.get_rank(player["Subject"], seasonID)
                         if player["Subject"] == Requests.puuid:
                             if cfg.get_feature_flag("discord_rpc"):
-                                rpc.set_data({"rank": playerRank["rank"], "rank_name": colors.escape_ansi(NUMBERTORANKS[playerRank["rank"]]) + " | " + str(playerRank["rr"]) + "rr"})
+                                rpc.set_data({"rank": playerRank["rank"], "rank_name": colors.escape_ansi(NUMBERTORANKS[playerRank["rank"]]) + "/" + str(playerRank["rr"]) + "RR"})
                         # rankStatus = playerRank[1]
                         #useless code since rate limit is handled in the requestsV
                         # while not rankStatus:
@@ -367,7 +367,7 @@ try:
                         skin3 = loadouts2[player["Subject"]]
 
                         # RANK/RR
-                        rankName = NUMBERTORANKS[playerRank["rank"]] + " | " + playerRank["rr"] + "RR"
+                        rankName = NUMBERTORANKS[playerRank["rank"]] + "/" + str(playerRank["rr"]) + "RR"
 
                         #short peak rank string
                         peakRankAct = f" (e{playerRank['peakrankep']}a{playerRank['peakrankact']})"
@@ -412,7 +412,6 @@ try:
                                     "agent": agent_dict[player["CharacterID"].lower()],
                                     "map": map_dict.get(coregame_stats["MapID"].lower()),
                                     "rank": playerRank["rank"],
-                                    "rr": rr,
                                     "match_id": coregame.match_id,
                                     "epoch": time.time(),
                                 }
@@ -465,7 +464,7 @@ try:
 
                         if player["Subject"] == Requests.puuid:
                             if cfg.get_feature_flag("discord_rpc"):
-                                rpc.set_data({"rank": playerRank["rank"], "rank_name": colors.escape_ansi(NUMBERTORANKS[playerRank["rank"]]) + " | " + str(playerRank["rr"]) + "rr"})
+                                rpc.set_data({"rank": playerRank["rank"], "rank_name": colors.escape_ansi(NUMBERTORANKS[playerRank["rank"]]) + "/" + str(playerRank["rr"]) + "RR"})
                         # rankStatus = playerRank[1]
                         #useless code since rate limit is handled in the requestsV
                         # while not rankStatus:
@@ -519,10 +518,7 @@ try:
                         # skin = loadouts[player["Subject"]]
 
                         # RANK
-                        rankName = NUMBERTORANKS[playerRank["rank"]] + " - " + playerRank["rr"] + "RR"
-
-                        # RANK RATING
-                        rr = playerRank["rr"]
+                        rankName = NUMBERTORANKS[playerRank["rank"]] + "/" + str(playerRank["rr"]) + "RR"
 
                         #short peak rank string
                         peakRankAct = f" (e{playerRank['peakrankep']}a{playerRank['peakrankact']})"
@@ -577,7 +573,7 @@ try:
 
                             if player["Subject"] == Requests.puuid:
                                 if cfg.get_feature_flag("discord_rpc"):
-                                    rpc.set_data({"rank": playerRank["rank"], "rank_name": colors.escape_ansi(NUMBERTORANKS[playerRank["rank"]]) + " | " + str(playerRank["rr"]) + "RR"})
+                                    rpc.set_data({"rank": playerRank["rank"], "rank_name": colors.escape_ansi(NUMBERTORANKS[playerRank["rank"]]) + "/" + str(playerRank["rr"]) + "RR"})
 
                             # rankStatus = playerRank[1]
                             #useless code since rate limit is handled in the requestsV
@@ -602,7 +598,7 @@ try:
                             name = color(names[player["Subject"]], fore=(76, 151, 237))
 
                             # RANK
-                            rankName = NUMBERTORANKS[playerRank["rank"]] + " | " + playerRank["rr"] + "RR"
+                            rankName = NUMBERTORANKS[playerRank["rank"]] + "/" + playerRank["rr"] + "RR"
 
                             #short peak rank string
                             peakRankAct = f" (e{playerRank['peakrankep']}a{playerRank['peakrankact']})"
