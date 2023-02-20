@@ -381,8 +381,8 @@ try:
                         # LEADERBOARD
                         leaderboard = playerRank["leaderboard"]
 
-                        hs = colors.get_hs_gradient(hs)
-                        wr = colors.get_wr_gradient(playerRank["wr"]) + f" ({playerRank['numberofgames']})"
+                        hs = colors.get_hs_gradient(hs) + "%"
+                        wr = colors.get_wr_gradient(playerRank["wr"]) + f"% ({playerRank['numberofgames']})"
 
                         if(int(leaderboard)>0):
                             is_leaderboard_needed = True
@@ -530,8 +530,8 @@ try:
                         # LEADERBOARD
                         leaderboard = playerRank["leaderboard"]
 
-                        hs = colors.get_hs_gradient(hs)
-                        wr = colors.get_wr_gradient(playerRank["wr"]) + f" ({playerRank['numberofgames']})"
+                        hs = colors.get_hs_gradient(hs) + "%"
+                        wr = colors.get_wr_gradient(playerRank["wr"]) + f"% ({playerRank['numberofgames']})"
 
                         if(int(leaderboard)>0):
                             is_leaderboard_needed = True
@@ -611,8 +611,8 @@ try:
                             # LEADERBOARD
                             leaderboard = playerRank["leaderboard"]
 
-                            hs = colors.get_hs_gradient(hs)
-                            wr = colors.get_wr_gradient(playerRank["wr"]) + f" ({playerRank['numberofgames']})"
+                            hs = colors.get_hs_gradient(hs) + "%"
+                            wr = colors.get_wr_gradient(playerRank["wr"]) + f"% ({playerRank['numberofgames']})"
 
                             if(int(leaderboard)>0):
                                 is_leaderboard_needed = True
