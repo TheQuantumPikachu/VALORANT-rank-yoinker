@@ -362,8 +362,8 @@ try:
                         # skin
                         skin = loadouts[player["Subject"]]
 
-                        # RANK
-                        rankName = NUMBERTORANKS[playerRank["rank"]]
+                        # RANK/RR
+                        rankName = NUMBERTORANKS[playerRank["rank"]] + " - " + playerRank["rr"] + "RR"
 
                         # RANK RATING
                         rr = playerRank["rr"]
@@ -516,7 +516,7 @@ try:
                         # skin = loadouts[player["Subject"]]
 
                         # RANK
-                        rankName = NUMBERTORANKS[playerRank["rank"]]
+                        rankName = NUMBERTORANKS[playerRank["rank"]] + " - " + playerRank["rr"] + "RR"
 
                         # RANK RATING
                         rr = playerRank["rr"]
@@ -600,7 +600,7 @@ try:
                             name = color(names[player["Subject"]], fore=(76, 151, 237))
 
                             # RANK
-                            rankName = NUMBERTORANKS[playerRank["rank"]]
+                            rankName = NUMBERTORANKS[playerRank["rank"]] + " - " + playerRank["rr"] + "RR"
 
                             # RANK RATING
                             rr = playerRank["rr"]
