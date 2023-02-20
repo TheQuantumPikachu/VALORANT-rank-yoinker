@@ -23,8 +23,24 @@ FLAGS_OPTS = {
 weapon_question = lambda config: {
         "type": "fuzzy",
         "name": "weapon",
-        "message": "Please select a weapon to show skin for:",
+        "message": "Please select the first weapon to show a skin for:",
         "default": config.get("weapon","Vandal"),
+        "choices": WEAPONS,
+    }
+
+weapon2_question = lambda config: {
+        "type": "fuzzy",
+        "name": "weapon2",
+        "message": "Please select a second weapon to show a skin for:",
+        "default": config.get("weapon2","Operator"),
+        "choices": WEAPONS,
+    }
+
+weapon3_question = lambda config: {
+        "type": "fuzzy",
+        "name": "weapon3",
+        "message": "Please select a third weapon to show skin for:",
+        "default": config.get("weapon3","Phantom"),
         "choices": WEAPONS,
     }
 

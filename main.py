@@ -233,6 +233,8 @@ try:
                 presences.wait_for_presence(namesClass.get_players_puuid(Players))
                 names = namesClass.get_names_from_puuids(Players)
                 loadouts = loadoutsClass.get_match_loadouts(coregame.get_coregame_match_id(), Players, cfg.weapon, valoApiSkins, names, state="game")
+                loadouts2 = loadoutsClass.get_match_loadouts(coregame.get_coregame_match_id(), Players, cfg.weapon2, valoApiSkins, names, state="game")
+                loadouts3 = loadoutsClass.get_match_loadouts(coregame.get_coregame_match_id(), Players, cfg.weapon3, valoApiSkins, names, state="game")
                 # with alive_bar(total=len(Players), title='Fetching Players', bar='classic2') as bar:
                 isRange = False
                 playersLoaded = 1
@@ -361,12 +363,11 @@ try:
 
                         # skin
                         skin = loadouts[player["Subject"]]
+                        skin2 = loadouts2[player["Subject"]]
+                        skin3 = loadouts2[player["Subject"]]
 
                         # RANK/RR
-                        rankName = NUMBERTORANKS[playerRank["rank"]] + " - " + playerRank["rr"] + "RR"
-
-                        # RANK RATING
-                        rr = playerRank["rr"]
+                        rankName = NUMBERTORANKS[playerRank["rank"]] + " | " + playerRank["rr"] + "RR"
 
                         #short peak rank string
                         peakRankAct = f" (e{playerRank['peakrankep']}a{playerRank['peakrankact']})"
@@ -388,13 +389,15 @@ try:
 
                         # LEVEL
                         level = PLcolor
+
                         table.add_row_table([party_icon,
                                               agent,
                                               name,
                                               # views,
                                               skin,
+                                              skin2,
+                                              skin3,
                                               rankName,
-                                              rr,
                                               peakRank,
                                               leaderboard,
                                               hs,
@@ -546,13 +549,12 @@ try:
                                               # views,
                                               "",
                                               rankName,
-                                              rr,
                                               peakRank,
                                               leaderboard,
                                               hs,
                                               wr,
                                               kd,
-                                              level,
+                                              level
                                               ])
                         # bar()
             if game_state == "MENUS":
@@ -575,7 +577,7 @@ try:
 
                             if player["Subject"] == Requests.puuid:
                                 if cfg.get_feature_flag("discord_rpc"):
-                                    rpc.set_data({"rank": playerRank["rank"], "rank_name": colors.escape_ansi(NUMBERTORANKS[playerRank["rank"]]) + " | " + str(playerRank["rr"]) + "rr"})
+                                    rpc.set_data({"rank": playerRank["rank"], "rank_name": colors.escape_ansi(NUMBERTORANKS[playerRank["rank"]]) + " | " + str(playerRank["rr"]) + "RR"})
 
                             # rankStatus = playerRank[1]
                             #useless code since rate limit is handled in the requestsV
@@ -600,10 +602,7 @@ try:
                             name = color(names[player["Subject"]], fore=(76, 151, 237))
 
                             # RANK
-                            rankName = NUMBERTORANKS[playerRank["rank"]] + " - " + playerRank["rr"] + "RR"
-
-                            # RANK RATING
-                            rr = playerRank["rr"]
+                            rankName = NUMBERTORANKS[playerRank["rank"]] + " | " + playerRank["rr"] + "RR"
 
                             #short peak rank string
                             peakRankAct = f" (e{playerRank['peakrankep']}a{playerRank['peakrankact']})"
@@ -630,7 +629,6 @@ try:
                                                 name,
                                                 "",
                                                 rankName,
-                                                rr,
                                                 peakRank,
                                                 leaderboard,
                                                 hs,
@@ -655,6 +653,8 @@ try:
                     table.set_runtime_col_flag('Party', False)
                     table.set_runtime_col_flag('Agent',False)
                     table.set_runtime_col_flag('Skin',False)
+                    table.set_runtime_col_flag('Skin2',False)
+                    table.set_runtime_col_flag('Skin3',False)
 
                 if game_state == "INGAME":
                     if isRange:

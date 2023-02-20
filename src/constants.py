@@ -154,6 +154,8 @@ DEFAULT_CONFIG = {
         "cooldown": 10,
         "port": 1100,
         "weapon": "Vandal",
+        "weapon2": "Operator",
+        "weapon3": "Phantom",
         "table": {
             "skin": True,
             "rr": True,

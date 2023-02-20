@@ -9,8 +9,9 @@ TABLE_COLUMN_NAMES = Literal[
     "Agent",
     "Name",
     "Skin",
+    "Skin 2",
+    "Skin 3",
     "Rank",
-    "RR",
     "Peak Rank",
     "Pos.",
     "HS",
@@ -29,8 +30,9 @@ class Table:
             True,  # Agent
             True,  # Name
             bool(config.table.get("skin", True)),  # Skin
+            bool(config.table.get("skin2", True)),  # Skin
+            bool(config.table.get("skin3", True)),  # Skin
             True,  # Rank
-            bool(config.table.get("rr", True)),  # RR
             bool(config.table.get("peakrank", True)),  # Peak Rank
             bool(config.table.get("leaderboard", True)),  # Leaderboard Position
             bool(
