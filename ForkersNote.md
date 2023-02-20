@@ -5,8 +5,8 @@ I have simple plans to personalize this fork:
   
 #UPDATE (20/2/2023):  
   
-I have now completed both objectives without removing customizability, now just to finetune it.
-My new goals are:
-3) Change "Skin 1" and "Skin 2" in the title row of the table to their respective configuration
-4) Cut out unnecessary excess lines
+I have now completed both objectives without removing customizability, now just to finetune it.  
+My new goals are:  
+3) Change "Skin 1" and "Skin 2" in the title row of the table to their respective configuration  
+4) Cut out unnecessary excess lines  
 I'm thinking #3 is going to be more difficult since my greatest feat in Python is print("hello world")
