@@ -30,7 +30,7 @@ def configure():
         "Optional Feature Flags",
         Separator(),
         "Full Basic Config (Suitable for most users)",
-        "Full Advance Config (I know what i am doing!)",
+        "Full Advance Config (I know what I'm doing!)",
         Separator(),
         "Save and Exit Configurator",
         "Exit Configurator"

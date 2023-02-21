@@ -46,6 +46,7 @@ class Table:
         ]
         self.runtime_col_flags = self.col_flags[:]  # making a copy
         self.field_names_candidates = list(get_args(TABLE_COLUMN_NAMES))
+        #self.field_names_candidates[3:6] = config.get("weapon", "Vandal"), config.get("weapon2", "Operator"), config.get("weapon3", "Phantom")
         self.field_names = [
             c for c, i in zip(self.field_names_candidates, self.col_flags) if i
         ]
