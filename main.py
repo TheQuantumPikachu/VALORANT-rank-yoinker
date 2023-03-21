@@ -598,7 +598,7 @@ try:
                             name = color(names[player["Subject"]], fore=(76, 151, 237))
 
                             # RANK
-                            rankName = NUMBERTORANKS[playerRank["rank"]] + "/" + playerRank["rr"] + "RR"
+                            rankName = NUMBERTORANKS[playerRank["rank"]] + "/" + str(playerRank["rr"]) + "RR"
 
                             #short peak rank string
                             peakRankAct = f" (e{playerRank['peakrankep']}a{playerRank['peakrankact']})"
