@@ -364,7 +364,7 @@ try:
                         # skin
                         skin = loadouts[player["Subject"]]
                         skin2 = loadouts2[player["Subject"]]
-                        skin3 = loadouts2[player["Subject"]]
+                        skin3 = loadouts3[player["Subject"]]
 
                         # RANK/RR
                         rankName = NUMBERTORANKS[playerRank["rank"]] + "/" + str(playerRank["rr"]) + "RR"
