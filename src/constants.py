@@ -52,6 +52,8 @@ sockets = {
 
 AGENTCOLORLIST = {
             "neon": (28, 69, 161),
+            "harbor":(35, 137, 218),
+            "gekko":(200, 244, 87),
             "none": (100, 100, 100),
             "viper": (48, 186, 135),
             "yoru": (52, 76, 207),
@@ -70,7 +72,7 @@ AGENTCOLORLIST = {
             "skye": (192, 230, 158),
             "sova": (37, 143, 204),
             "chamber": (200, 200, 200),
-            "fade": (92, 92, 94)
+            "fade": (92, 92, 94),
         }
 
 
@@ -158,6 +160,8 @@ DEFAULT_CONFIG = {
         "weapon3": "Phantom",
         "table": {
             "skin": True,
+            "skin2": True,
+            "skin3": True,
             "rr": True,
             "peakrank": True,
             "leaderboard": True,

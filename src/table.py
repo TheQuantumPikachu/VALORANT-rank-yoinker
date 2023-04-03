@@ -46,7 +46,7 @@ class Table:
         ]
         self.runtime_col_flags = self.col_flags[:]  # making a copy
         self.field_names_candidates = list(get_args(TABLE_COLUMN_NAMES))
-        #self.field_names_candidates[3:6] = config.get("weapon", "Vandal"), config.get("weapon2", "Operator"), config.get("weapon3", "Phantom")
+        #self.field_names_candidates[3:6] = config.weapon, config.weapon2, config.weapon3
         self.field_names = [
             c for c, i in zip(self.field_names_candidates, self.col_flags) if i
         ]
@@ -64,8 +64,9 @@ class Table:
 
         # for field in fields_to_display:
         #     self.rich_table.add_column(field, justify="center")
-        # self.set_collumns()
+        # self.set_columns()
         self.rows = []
+        self.weaponry = [config.weapon, config.weapon2, config.weapon3]
 
     def set_title(self, title):
         self.rich_table.title = self.ansi_to_console(title)
@@ -109,6 +110,7 @@ class Table:
         self.apply_rows()
 
         self.console.print(self.rich_table)
+        #self.console.print(self.runtime_col_flags)
 
     def clear(self):
         self.rich_table = RichTable()
@@ -136,9 +138,17 @@ class Table:
         self.overall_col_flags = [
             f1 & f2 for f1, f2 in zip(self.col_flags, self.runtime_col_flags)
         ]
+        self.field_names_candidates_copy = self.field_names_candidates[:]
+        self.field_names_candidates_copy[3:6] = self.weaponry
+
         self.fields_to_display = [
             c for c, flag in zip(self.field_names_candidates, self.overall_col_flags) if flag
         ]
+        self.fields_to_display_doppelganger = [
+            c for c, flag in zip(self.field_names_candidates_copy, self.overall_col_flags) if flag
+        ]
 
-        for field in self.fields_to_display:
+        #This is a weird way to show "Vandal | Operator | Phantom" instead of "Skin | Skin 2 | Skin 3" but it works
+
+        for field in self.fields_to_display_doppelganger:
             self.rich_table.add_column(field, justify="center")

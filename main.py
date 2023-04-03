@@ -268,7 +268,7 @@ try:
                                 # if curr_player_stat["match_id"] == coregame.match_id and len(stats_data[player["Subject"]]) > 1:
                                     curr_player_stat = stats_data[player["Subject"]][-i]
                                 if curr_player_stat["match_id"] != coregame.match_id:
-                                    #checking for party memebers and self players
+                                    #checking for party members and self players
                                     times = 0
                                     m_set = ()
                                     for m in stats_data[player["Subject"]]:
@@ -362,9 +362,9 @@ try:
                         # views = get_views(names[player["Subject"]])
 
                         # skin
-                        skin = loadouts[player["Subject"]]
-                        skin2 = loadouts2[player["Subject"]]
-                        skin3 = loadouts3[player["Subject"]]
+                        skin = loadouts[player["Subject"]].rsplit(' ', 1)[0]
+                        skin2 = loadouts2[player["Subject"]].rsplit(' ', 1)[0]
+                        skin3 = loadouts3[player["Subject"]].rsplit(' ', 1)[0]
 
                         # RANK/RR
                         rankName = NUMBERTORANKS[playerRank["rank"]] + "/" + str(playerRank["rr"]) + "RR"
@@ -539,10 +539,14 @@ try:
                         # LEVEL
                         level = PLcolor
 
+
+                        #pregameRowing
                         table.add_row_table([party_icon,
                                               agent,
                                               name,
                                               # views,
+                                              "",
+                                              "",
                                               "",
                                               rankName,
                                               peakRank,
@@ -620,16 +624,19 @@ try:
                             # LEVEL
                             level = PLcolor
 
+                            #menuRowing
                             table.add_row_table([party_icon,
                                                 agent,
                                                 name,
                                                 "",
+                                                "",
+                                                "",
                                                 rankName,
                                                 peakRank,
-                                                leaderboard,
+                                                "",
                                                 hs,
-                                                wr,
                                                 kd,
+                                                wr,
                                                 level
                                                 ])
                     seen.append(player["Subject"])
@@ -647,15 +654,20 @@ try:
 
                 if game_state == "MENUS":
                     table.set_runtime_col_flag('Party', False)
-                    table.set_runtime_col_flag('Agent',False)
-                    table.set_runtime_col_flag('Skin',False)
-                    table.set_runtime_col_flag('Skin2',False)
-                    table.set_runtime_col_flag('Skin3',False)
+                    table.set_runtime_col_flag('Agent', False)
+                    table.set_runtime_col_flag('Skin', False)
+                    table.set_runtime_col_flag('Skin 2', False)
+                    table.set_runtime_col_flag('Skin 3', False)
 
                 if game_state == "INGAME":
                     if isRange:
                         table.set_runtime_col_flag('Party', False)
-                        table.set_runtime_col_flag('Agent',False)
+                        table.set_runtime_col_flag('Agent', False)
+                
+                if game_state == "PREGAME":
+                    table.set_runtime_col_flag('Skin', False)
+                    table.set_runtime_col_flag('Skin 2', False)
+                    table.set_runtime_col_flag('Skin 3', False)
 
                 table.set_caption(f"VALORANT rank yoinker v{version}")
                 table.display()
