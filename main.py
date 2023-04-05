@@ -370,7 +370,7 @@ try:
                         rankName = NUMBERTORANKS[playerRank["rank"]] + "/" + str(playerRank["rr"]) + "RR"
 
                         #short peak rank string
-                        peakRankAct = f" (e{playerRank['peakrankep']}a{playerRank['peakrankact']})"
+                        peakRankAct = f"\n(e{playerRank['peakrankep']}a{playerRank['peakrankact']})"
                         if not cfg.get_feature_flag("peak_rank_act"):
                             peakRankAct = ""
 

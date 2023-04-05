@@ -64,8 +64,8 @@ class Colors:
             number = int(number)
         except ValueError:
             return color("N/a",fore=(46, 46, 46))
-        dark_red = (64, 15, 10)
-        yellow = (140, 119, 11)
+        dark_red = (218, 30, 30)
+        yellow = (228, 166, 18)
         green = (18, 204, 25)
         white = (255, 255, 255)
         gradients = {
@@ -96,8 +96,8 @@ class Colors:
             number = int(number)
         except ValueError:
             return color("N/a",fore=(46, 46, 46))
-        dark_red = (64, 15, 10)
-        yellow = (140, 119, 11)
+        dark_red = (218, 30, 30)
+        yellow = (228, 166, 18)
         green = (18, 204, 25)
         white = (255, 255, 255)
         gradients = {
